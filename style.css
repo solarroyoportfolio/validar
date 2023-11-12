@@ -81,6 +81,40 @@ input:hover{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    background:rgba(78, 72, 127, 0.464);
+    padding: 20px;
+    
+}
+
+.ventana-datos p{
+    width:50%;
+    margin-top: 20px;
+}
+
+.ventana-datos img{
+    width: 300px;
+}
+.body-alumnos{
+ display: flex;
+ justify-content: space-around;
+ align-items: center;
+ gap: 20px;
+}
+
+#perfilButton{
+    background: rgb(77, 132, 166);
+    border: none;
+}
+
+#perfilButton:hover{
+    background: lightskyblue;
+    transform: scale(1.1);
+
+}
+
+#logoutButton:hover{
+    transform: scale(1.1);
 }
 
 .body-cookies{
@@ -97,4 +131,10 @@ ul{
     font-size: 1.5rem;
     text-transform: uppercase;
 }
+
+#parrafo-bienvenida{
+    width: 50%;
+}
 /* ------------------------ */
+
+

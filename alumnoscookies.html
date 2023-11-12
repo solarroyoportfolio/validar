@@ -9,8 +9,14 @@
 </head>
 <body>
   <h1 id="bienvenido"></h1>
+  <p id="parrafo-bienvenida"></p>
   <br>
-  <button id="logoutButton" onclick="cerrarSesion()">Cerrar sesión</button>
+  <div class="body-alumnos">
+    <button class="btn btn-warning" id="logoutButton" onclick="cerrarSesion()">Cerrar sesión</button>
+  
+  <!-- Botón para abrir el perfil en una ventana flotante -->
+  <button class="btn btn-primary" id="perfilButton">Ver perfil</button>
+  </div>
   <script>
     // Obtener el ID del registro desde el almacenamiento local
     var registroId = localStorage.getItem("registroId");
@@ -28,6 +34,7 @@
 
           // Mostrar el mensaje de bienvenida
           document.getElementById("bienvenido").textContent = "Bienvenido " + nombreApellido;
+          document.getElementById("parrafo-bienvenida").textContent = "Bienvenido a tu " + data.curso +", aqui encontraras la información referida a tu curso elegido, nuevamente te damos las gracias por confiar en nuestro contenido";
 
           // Obtener el curso del registro
           var curso = data.curso;
@@ -41,7 +48,7 @@
             .then(function(cursosData) {
               // Buscar el curso que coincida con el nombre del curso del registro
               for (var key in cursosData) {
-                if (cursosData.hasOwnProperty(key) && cursosData[key].nombrecurso === curso) {
+                if (cursosData.hasOwnProperty(key) && cursosData[key].nombre === curso) {
                   var cursoEncontrado = cursosData[key];
                   // Mostrar los datos del curso
                   mostrarDatosCurso(cursoEncontrado);
@@ -58,17 +65,16 @@
         });
     } else {
       // Si no se encuentra el ID del registro en el almacenamiento local, redirigir a login.html
-      window.location.href = "login.html";
+      window.location.href = "https://solarroyoportfolio.github.io/validar/login.html";
     }
 
     function mostrarDatosCurso(curso) {
       var cursoContainer = document.createElement("div");
-      cursosContainer.className = ("ventana-datos");
+      cursoContainer.className = ("ventana-datos");
       cursoContainer.innerHTML = `
-        <h2>${curso.nombrecurso}</h2>
-        <img src="${curso.imagen}" alt="${curso.nombrecurso}">
-        <p><strong>Presentación:</strong> ${curso.presentacion}</p>
-        <p><strong>Objetivo General:</strong> ${curso.objetivogeneral}</p>
+      <img src="${curso.imagen}" alt="${curso.nombre}">
+        <h2>${curso.nombre}</h2>
+        <p><strong>Descripción:</strong> ${curso.descripcion}</p>
       `;
       document.body.appendChild(cursoContainer);
     }
@@ -77,11 +83,10 @@
           localStorage.removeItem("registroId");
 
           // Puedes redirigir al usuario a una página de inicio de sesión o realizar otras acciones de cierre de sesión si es necesario
-          window.location.href = "login.html";
+          window.location.href = "https://solarroyoportfolio.github.io/validar/login.html";
       }
   </script>
-  <!-- Botón para abrir el perfil en una ventana flotante -->
-   <button id="perfilButton">Ver perfil</button>
+  
 
    <script>
      // Obtener el ID del registro desde la URL
