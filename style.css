@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+:root{
+    --fondoclaro : #f3f2ff;
+    --fondooscuro : rgb(78, 72, 127);
+}
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    font-family: 'Lato', 'Helvetica Neue';
+    background: var(--fondoclaro);
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    background:url(./img/fondo.png) ;
+    padding: 20px;
+    position: relative;
+    min-height: 100vh;
+}
+
+
+.form-validar, .form-login{
+    top: 200%;
+    border-radius: 10px;
+    background: #fff;
+    padding: 30px;
+    margin-top: 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.form-validar h1, .form-login h1{
+    font-weight: 900;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#registroForm, #loginForm{
+    width: 100%;
+
+}
+
+#registroForm input , #loginForm input{
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+input:hover{
+    background: var(--fondooscuro);
+    color: var(--fondoclaro);
+}
+
+.fa-lock{
+    font-size: 1.1rem;
+    padding-right: 8px;
+}
+
+
+/* alumnos  cookies ---------*/
+
+#bienvenido{
+    font-weight: 900;
+    text-transform: capitalize;
+}
+
+.ventana-datos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.body-cookies{
+    justify-content: center;
+}
+
+ul{
+    text-decoration: none;
+    list-style: none;
+}
+
+.body-cookies h1{
+    font-weight: 900;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+}
+/* ------------------------ */
